@@ -1,0 +1,37 @@
+# roles/packages/tasks/main.yml
+
+- name: Install Pacman packages
+  community.general.pacman:
+    name: "{{ packages_pacman.install }}"
+    state: present
+  when:
+    - packages_pacman.install is defined
+    - packages_pacman.install | length > 0
+
+- name: Remove Pacman packages
+  community.general.pacman:
+    name: "{{ packages_pacman.remove }}"
+    state: absent
+  when:
+    - packages_pacman.remove is defined
+    - packages_pacman.remove | length > 0
+
+- name: Install AUR packages
+  kewlfft.aur.aur:
+    name: "{{ packages_aur.install }}"
+    state: present
+    use: yay
+  become: false
+  when:
+    - packages_aur.install is defined
+    - packages_aur.install | length > 0
+
+- name: Remove AUR packages
+  kewlfft.aur.aur:
+    name: "{{ packages_aur.remove }}"
+    state: absent
+    use: yay
+  become: false
+  when:
+    - packages_aur.remove is defined
+    - packages_aur.remove | length > 0

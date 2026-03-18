@@ -1,0 +1,15 @@
+- name: Configure Omarchy System
+  hosts: shack-book-001
+  become: true
+
+  pre_tasks:
+    - name: Ensure we are running Arch Linux
+      ansible.builtin.assert:
+        that:
+          - ansible_facts["distribution"] == "Archlinux"
+        fail_msg: "This playbook only works on Arch-based systems (Omarchy). Aborting."
+
+  roles:
+    - packages
+    # - configs
+    # - omarchy

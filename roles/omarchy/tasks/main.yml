@@ -1,0 +1,12 @@
+# roles/omarchy/tasks/main.yml
+
+- name: Ensure omarchy config dir
+  ansible.buitlin.file:
+    path: /etc/omarchy
+    state: directory
+
+- name: Deploy omarchy config
+  ansible.builtin.copy:
+    src: example.conf
+    dest: /etc/omarchy/example.conf
+    mode: '0755'

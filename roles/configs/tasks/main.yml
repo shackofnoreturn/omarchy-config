@@ -1,0 +1,37 @@
+# roles/configs/tasks/main.yml
+
+- name: Ensure VSCode config dir
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/.config/Code/User"
+    state: directory
+    mode: '0755'
+
+- name: Deploy VSCode settings
+  ansible.builtin.template:
+    src: vscode_settings.json.j2
+    dest: "{{ ansible_env.HOME }}/.config/Code/User/settings.json"
+    mode: '0755'
+
+- name: Ensure Brave config dir
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/.config/BraveSoftware/Brave-Browser/Default"
+    state: directory
+    mode: '0755'
+
+- name: Deploy Brave preferences
+  ansible.builtin.template:
+    src: brave_preferences.json.j2
+    dest: "{{ ansible_env.HOME }}/.config/BraveSoftware/Brave-Browser/Default/Preferences"
+    mode: '0755'
+
+- name: Ensure htop config dir
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/.config/htop"
+    state: directory
+    mode: '0755'
+
+- name: Deploy htop config
+  ansible.builtin.copy:
+    src: htoprc
+    dest: "{{ ansible_env.HOME }}/.config/htop/htoprc"
+    mode: '0755'

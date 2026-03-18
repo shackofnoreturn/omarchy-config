@@ -1,0 +1,4 @@
+# roles/omarchy_config/defaults/main.yml
+
+state: present
+config_dir: /etc/omarchy

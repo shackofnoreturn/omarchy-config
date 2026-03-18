@@ -1,0 +1,13 @@
+# roles/packages/defaults/main.yml
+
+packages_pacman:
+  install:
+    - git
+  remove:
+    - chromium
+
+packages_aur:
+  install:
+    - visual-studio-code-bin
+    - brave-bin
+  remove: []
