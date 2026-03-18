@@ -1,10 +1,64 @@
 # roles/packages/defaults/main.yml
 
+# Default App List on Omarchy Systems
+# 1Password
+# Aether
+# Alacritty
+# Basecamp (web)
+# Calculator
+# ChatGPT (web)
+# Chromium
+# Discord
+# Disk Usage
+# Disks
+# Docker
+# Document Viewer
+# Figma (web)
+# Files
+# Fizzy (web)
+# GitHub (web)
+# Google Contacts (web)
+# Google Maps (web)
+# Google Messages (web)
+# Google Photos (web)
+# HEY (web)
+# Htop
+# Image Viewer
+# Kdenlive
+# LibreOffice
+# LibreOffice Base
+# LibreOffice Calc
+# LibreOffice Draw
+# LibreOffice Impress
+# LibreOffice Math
+# LibreOffice Writer
+# LocalSend
+# Media Player
+# Neovim
+# OBS Studio
+# Obsidian
+# Pinta
+# Print Settings
+# Signal (web)
+# Spotify
+# Typora
+# Vim
+# WhatsApp (web)
+# X (web)
+# Xournal++
+# YouTube (web)
+# Zoom (web)
+
 packages_pacman:
   install:
     - git
   remove:
+    - 1password-beta
+    - 1password-cli
     - chromium
+    - spotify
+    - typora
+    - xournalpp
 
 packages_aur:
   install:

@@ -30,13 +30,7 @@ or
 
 
 ## Configuring
-### Packages
-Check your current packages with `pacman -Qqn` (official) and `pacman -Qqm` (unofficial)
-
-Alter your package selection:
-roles/packages/defaults/main.yml
-
-(read the individual role's `README.md` files for more info into configuration)
+Read the individual role's `README.md` files for more info into configuration.
 
 
 ## TODO
@@ -45,8 +39,9 @@ roles/packages/defaults/main.yml
 - [x] Install Brave
 - [x] Install VSCode
 - [x] Remove Chromium
-- [ ] Set up GitHub repository
-- [ ] Go through all applications and make up list of removals
+- [x] Set up GitHub repository
+- [x] List app removals
 - [ ] Set system-wide default editor under Setup > Defaults
+- [ ] Create snapshot with omarchy-snapshot create
 
 echo 255 | sudo tee /sys/class/leds/smc::kbd_backlight/brightness
