@@ -11,14 +11,8 @@ Roles:
 
 ## How
 ### Prerequisites
-Install the required ansible-galaxy collection:
-```ansible-galaxy collection install kewlfft.aur```
-
-Add your current user to the sudoers file by running this command if you don't want to enter become password every run:
-```
-echo "yourUser ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/shackadmin
-sudo chmod 440 /etc/sudoers.d/shackadmin
-```
+Install the requirments:
+```ansible-galaxy collection install -r requirements.yml```
 
 ### Terminal
 ```ansible-playbook -i inventory/hosts.yml playbook.yml```
@@ -44,4 +38,6 @@ Read the individual role's `README.md` files for more info into configuration.
 - [ ] Set system-wide default editor under Setup > Defaults
 - [ ] Create snapshot with omarchy-snapshot create
 
+
+## Stashed commands
 echo 255 | sudo tee /sys/class/leds/smc::kbd_backlight/brightness
